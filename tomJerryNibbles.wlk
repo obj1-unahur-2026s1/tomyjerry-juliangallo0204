@@ -12,7 +12,9 @@ object tom {
 
 object jerry {
     var edad = 2
-    method cumplirAños() = edad + 1
+    method cumplirAnios() {
+        edad = edad + 1
+    }
 
     method peso() = edad * 20
 }
