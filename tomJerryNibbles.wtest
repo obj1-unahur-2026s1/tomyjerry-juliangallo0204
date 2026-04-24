@@ -1,6 +1,6 @@
 import tomJerryNibbles.*
 
-describe "Grupo de test" {
+describe "Grupo de test 1" {
 
   test "Al inicio, la velocidad máxima de Tom es 10" {
     assert.equals(10, tom.velocidadMaxima())
@@ -41,5 +41,25 @@ describe "Grupo de test" {
     tom.comer(jerry)
     tom.correr(38)
     assert.equals(24, tom.velocidadMaxima())
+  }
+}
+
+describe "Grupo de test 2" {
+
+  test "si Cherie está enamorada de Jerry y luego Tom la caza a 30 metros, su velocidad máxima sería de 12.7" {
+    tom.cazar(cherie, 30)
+    assert.equals(12.7, tom.velocidadMaxima())
+  }
+
+  test "si Cherie se desenamora de Jerry, y luego Tom la caza a 30 metros, su velocidad máxima pasaría a 12.2" {
+    cherie.desenamorarse()
+    tom.cazar(cherie, 30)
+    assert.equals(12.2, tom.velocidadMaxima())
+  }
+
+  test "Cherie sigue desenamorada, pero esta vez logra escapar de Tom a una distancia de 110 metros. Tom intenta cazarla, por lo tanto su velocida maxima sería de 10" {
+    cherie.desenamorarse()
+    tom.cazar(cherie, 110)
+    assert.equals(10, tom.velocidadMaxima())
   }
 }

@@ -33,5 +33,14 @@ object nibbles {
 }
 
 object cherie {
-    method peso() = 30
+    var estaEnamorada = true
+
+    method estaEnamorada() = estaEnamorada
+    method desenamorarse() {
+        estaEnamorada = false
+    }
+    method peso() {
+        if (self.estaEnamorada()) { return 30 }
+        else { return 25 }
+    }
 }
